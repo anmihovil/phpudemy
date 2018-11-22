@@ -18,9 +18,10 @@ if(isset($_POST['submit'])){
     $session->login($user_found);
     redirect("index.php");
   }else{
-    $the_message = "Your password or username don't match";
+    $the_message = "Incorrect password or username!";
   }
 }else{
+  $the_message = "";
   $username = "";
   $password = "";
 }
@@ -28,7 +29,7 @@ if(isset($_POST['submit'])){
 
 <div class="col-md-4 col-md-offset-3">
 
-<h4 class="bg-danger"><?php echo $the_message; ?></h4>
+<h4 class="bg-danger"><?php echo $the_message;?></h4>
 
 <form id="login-id" action="" method="post">
 
