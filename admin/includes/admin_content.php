@@ -25,13 +25,13 @@
             // $user->update();
 
             // Following lines of code are using create() method to make a new user
-            // $user = new User();
-            // $user->username = "2ndExample_username";
-            // $user->password = "2ndExample_password";
-            // $user->first_name = "Jacky";
-            // $user->last_name = "Stewart";
-            //
-            // $user->create();
+            $user = new User();
+            $user->username = "jshunt";
+            $user->password = "thespeed";
+            $user->first_name = "James";
+            $user->last_name = "Hunt";
+
+            $user->create();
 
 
             /*
