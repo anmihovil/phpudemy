@@ -88,7 +88,7 @@ class User{
       protected function properties(){
         //return get_object_vars($this);
         $properties = array();
-        foreach ($self::$db_table_fields as $db_field) {
+        foreach (self::$db_table_fields as $db_field) {
           // code...
           if(property_exists($this, $db_field)){
             //using dynamic property ad hoc
