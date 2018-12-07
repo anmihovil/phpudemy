@@ -108,6 +108,7 @@ class User{
 
         $properties = $this->properties();
 
+        //Genuine basic solution improved by abstraction routine later on
         //$sql = "INSERT INTO ".self::$db_table ." (username,password,first_name,last_name)";
         // $sql.= "VALUES ('";
         // $sql.= $database->escape_string($this->username). "',' ";
@@ -129,11 +130,21 @@ class User{
 
       public function update(){
         global $database;
-        $sql = "UPDATE users SET ";
-        $sql.= "username='" . $database->escape_string($this->username)     . "', ";
-        $sql.= "password='" . $database->escape_string($this->password)     . "', ";
-        $sql.= "first_name='" . $database->escape_string($this->first_name) . "', ";
-        $sql.= "last_name='" . $database->escape_string($this->last_name)   . "' ";
+
+        $properties = $this->properties();
+        $properties_pairs = array();
+
+        foreach ($variable as $key => $value) {
+          // code...
+          $properties_pairs[]="{$key}='{$value}'";
+
+        }
+        $sql = "UPDATE".self::$db_table." SET ";
+        $sql.= implode(", ", $properties_pairs);
+        // $sql.= "username='" . $database->escape_string($this->username)     . "', ";
+        // $sql.= "password='" . $database->escape_string($this->password)     . "', ";
+        // $sql.= "first_name='" . $database->escape_string($this->first_name) . "', ";
+        // $sql.= "last_name='" . $database->escape_string($this->last_name)   . "' ";
         $sql.= " WHERE _id= " . $database->escape_string($this->_id);
 
         $database->query($sql);
