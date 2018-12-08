@@ -10,9 +10,21 @@
 
             <?php
 
-            // $user = new User();
-            // $user->username="bakmihovil";
-            // $user->save();
+            // A routine to update users data - working fine!
+            // $user = User::find_user_by_id(9);
+            // $user->username="vibrambilla";
+            // $user->password="therainman";
+            // $user->first_name="vittorio";
+            // $user->last_name="brambilla";
+            // $user->update();
+
+            //$user = new User();
+            // $user->username="scrossfield";
+            // $user->password="testpilot";
+            // $user->first_name="scott";
+            // $user->last_name="crossfield";
+            // $user->update();
+            //$user->save();
 
             // $user = User::find_user_by_id(4);
             // $user->username="ivanoreb";

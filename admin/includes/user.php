@@ -98,6 +98,19 @@ class User{
         return $properties;
       }
 
+      protected function clean_properties(){
+        global $database;
+
+        $clean_properties = array();
+
+        foreach ($this->properties() as $key => $value) {
+          // code...
+          $clean_properties[$key] = $database->escape_string($value);
+        }
+
+        return $clean_properties;
+      }
+
       public function save(){
         global $database;
         return isset($this->_id) ? $this->update() : $this->create();
@@ -106,7 +119,7 @@ class User{
       public function create(){
         global $database;
 
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
 
         //Genuine basic solution improved by abstraction routine later on
         //$sql = "INSERT INTO ".self::$db_table ." (username,password,first_name,last_name)";
@@ -131,16 +144,17 @@ class User{
       public function update(){
         global $database;
 
-        $properties = $this->properties();
+        $properties = $this->clean_properties();
         $properties_pairs = array();
 
-        foreach ($variable as $key => $value) {
+        foreach ($properties as $key => $value) {
           // code...
           $properties_pairs[]="{$key}='{$value}'";
 
         }
-        $sql = "UPDATE".self::$db_table." SET ";
+        $sql = "UPDATE ".self::$db_table." SET ";
         $sql.= implode(", ", $properties_pairs);
+        // Using the same abstraction routine from create method
         // $sql.= "username='" . $database->escape_string($this->username)     . "', ";
         // $sql.= "password='" . $database->escape_string($this->password)     . "', ";
         // $sql.= "first_name='" . $database->escape_string($this->first_name) . "', ";
