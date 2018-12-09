@@ -63,11 +63,11 @@
             // After making method static no need to instantiate the class User
             //$user = new User();
 
-            // $users = User::find_all_users();
-            // foreach ($users as $user) {
-            //   // code...
-            //   echo $user->username."<br>";
-            // }
+            $users = User::find_all();
+            foreach ($users as $user) {
+              // code...
+              echo $user->username."<br>";
+            }
 
             // while($row = mysqli_fetch_array($result_set)){
             //   echo $row['username']."<br>";
