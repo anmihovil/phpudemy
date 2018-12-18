@@ -7,11 +7,13 @@ class Photo extends Db_object{
 
   public $photo_id;
   public $title;
-  public $description; 
+  public $description;
   public $filename;
   public $type;
   public $size;
 
+  public $temp_path;
+  public $upload_directory = "images";
 
 }
 
