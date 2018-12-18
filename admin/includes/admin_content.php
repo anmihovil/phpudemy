@@ -18,8 +18,8 @@
             // $user->last_name="brambilla";
             // $user->update();
 
-            //$user = new User();
-            // $user->username="scrossfield";
+            // $user = new User();
+            // $user->username="joglenn";
             // $user->password="testpilot";
             // $user->first_name="scott";
             // $user->last_name="crossfield";
@@ -36,12 +36,12 @@
             // $user->last_name="Ickx";
             // $user->update();
 
-            // Following lines of code are using create() method to make a new user
+            //Following lines of code are using create() method to make a new user
             // $user = new User();
-            // $user->username = "jshunt";
-            // $user->password = "thespeed";
-            // $user->first_name = "James";
-            // $user->last_name = "Hunt";
+            // $user->username = "jyoung";
+            // $user->password = "columbia";
+            // $user->first_name = "John";
+            // $user->last_name = "Young";
             //
             // $user->create();
 
@@ -63,11 +63,11 @@
             // After making method static no need to instantiate the class User
             //$user = new User();
 
-            $users = User::find_all();
-            foreach ($users as $user) {
-              // code...
-              echo $user->username."<br>";
-            }
+            // $users = User::find_all();
+            // foreach ($users as $user) {
+            //   // code...
+            //   echo $user->username."<br>";
+            // }
 
             // while($row = mysqli_fetch_array($result_set)){
             //   echo $row['username']."<br>";
@@ -89,6 +89,15 @@
 
             //echo $found_user['username'];
             // echo $user->last_name;
+
+            $photo = Photo::find_all();
+            foreach ($photo as $value) {
+              // code...
+              echo $value->title . " " . $value->description . "<br>";
+            }
+
+
+
 
             ?>
 
