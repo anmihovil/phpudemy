@@ -18,13 +18,13 @@
             // $user->last_name="brambilla";
             // $user->update();
 
-            // $user = new User();
-            // $user->username="joglenn";
-            // $user->password="testpilot";
-            // $user->first_name="scott";
-            // $user->last_name="crossfield";
-            // $user->update();
-            //$user->save();
+            $photo = new Photo();
+            $photo->title="Mona Lisa";
+            $photo->description="The world's most known painting";
+            $photo->filename="monalisa";
+            $photo->type="jpg";
+            $photo->create();
+            $user->save();
 
             // $user = User::find_user_by_id(4);
             // $user->username="ivanoreb";
@@ -90,11 +90,11 @@
             //echo $found_user['username'];
             // echo $user->last_name;
 
-            $photo = Photo::find_all();
-            foreach ($photo as $value) {
-              // code...
-              echo $value->title . " " . $value->description . "<br>";
-            }
+            // $photo = Photo::find_all();
+            // foreach ($photo as $value) {
+            //   // code...
+            //   echo $value->title . " " . $value->description . "<br>";
+            // }
 
 
 
