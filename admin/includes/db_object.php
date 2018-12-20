@@ -107,6 +107,7 @@ class Db_object{
       $properties = $this->clean_properties();
 
       //Genuine basic solution improved by abstraction routine later on
+      //should be commented out, left for testing purposes
       $sql = "INSERT INTO ".static::$db_table ." (username,password,first_name,last_name)";
       $sql.= "VALUES ('";
       $sql.= $database->escape_string($this->username). "',' ";
@@ -114,7 +115,9 @@ class Db_object{
       $sql.= $database->escape_string($this->first_name). "','";
       $sql.= $database->escape_string($this->last_name). "')";
 
-      //Properties abstraction routine - improved solution
+      //Properties abstraction routine - improved solution, should be active
+      //but returns query failed message!
+
       // $sql = "INSERT INTO ". static::$db_table ."(". implode(",", array_keys($properties)) .")";
       // $sql.= "VALUES ('".implode("','", array_values($properties))."')";
 

@@ -90,16 +90,10 @@
             //echo $found_user['username'];
             // echo $user->last_name;
 
-            // $photo = Photo::find_all();
-            // foreach ($photo as $value) {
-            //   // code...
-            //   echo $value->title . " " . $value->description . "<br>";
-            // }
-
-            $user = User::find_all();
-            foreach ($user as $value) {
+            $photo = Photo::find_all();
+            foreach ($photo as $value) {
               // code...
-              echo $value->username."<br>";
+              echo $value->title . " " . $value->description . "<br>";
             }
 
             ?>
